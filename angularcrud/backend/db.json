@@ -39,7 +39,23 @@
       "imagem": "assets/images/Air_Max_270.webp"
     }
   ],
-  "carrinho": [],
+  "carrinho": [
+    {
+      "id": "5a9d",
+      "id_user": 1,
+      "id_produto": "1"
+    },
+    {
+      "id": "6dff",
+      "id_user": 1,
+      "id_produto": "2"
+    },
+    {
+      "id": "8d96",
+      "id_user": 1,
+      "id_produto": "2"
+    }
+  ],
   "users": [
     {
       "id": "1",

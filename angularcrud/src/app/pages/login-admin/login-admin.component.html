@@ -1,0 +1,49 @@
+<button>Acesso Usuario</button>
+ <button class="button" (click)="acessoUsuario()">Acessar o usuário</button>
+
+<div class="container">
+  
+  <div class="login-box">
+    <div class="logo-container">
+      <img src="assets/images/imagem-PI-resized.png" alt="Logo">
+    </div>
+
+    <h2>Entrar na sua conta</h2>
+
+    <form (ngSubmit)="onBotaoClicado()" #loginForm="ngForm">
+      <div class="input-container">
+        <label for="usuario">Usuário</label>
+        <input
+          type="text"
+          id="usuario"
+          name="usuario"
+          placeholder="Digite seu Usuário"
+          [(ngModel)]="login"
+          required
+        />
+      </div>
+
+      <div class="input-container">
+        <label for="senha">Senha</label>
+        <input
+          type="password"
+          id="senha"
+          name="senha"
+          placeholder="**"
+          [(ngModel)]="senha"
+          required
+        />
+      </div>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <div class="forgot-password">
+      <a routerLink="/recuperar-senha">Esqueci minha senha</a>
+    </div>
+
+    <div class="register">
+      <p>Não tem uma conta? <a routerLink="/cadastro">Cadastrar-se</a></p>
+    </div>
+  </div>
+</div>

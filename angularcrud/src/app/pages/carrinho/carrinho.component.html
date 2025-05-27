@@ -1,6 +1,12 @@
 <section>
   <app-menu [numeroDeItensNoCarrinho]="numeroDeItensNoCarrinho"></app-menu>
   <div>
+    <section id="carrinho" class="hidden">
+      <h2>Seu Carrinho</h2>
+      <div id="lista-carrinho"></div>
+      <p id="total">Total: R$ 0,00</p>
+      <button (click)="finalizarCompra()">FINALIZAR COMPRA</button>
+    </section>
     <h2>Seu Carrinho</h2>
 
     @for(itens of carrinho; track $index) {
@@ -18,3 +24,4 @@
     </div>
   </div>
 </section>
+

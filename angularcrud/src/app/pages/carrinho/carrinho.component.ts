@@ -4,6 +4,7 @@ import { Produto } from '../../core/services/types/types'; // Importe a interfac
 import { MenuComponent } from '../../components/menu/menu.component';
 import { CarrinhoService } from '../../core/services/carrinho.service';
 import { catchError, of } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,12 +15,16 @@ import { catchError, of } from 'rxjs';
   imports: [MenuComponent]
 })
 export class CarrinhoComponent {
-  constructor(private carrinhoService: CarrinhoService) { }
+  constructor(private carrinhoService: CarrinhoService, private router:Router) { }
   carrinho: any[] = [];
   valorTotal: number = 0.00;
   numeroDeItensNoCarrinho: number = 0;
 
   idUser: number = localStorage.getItem('id_user') ? parseInt(localStorage.getItem('id_user')!) : 1;
+
+  finalizarCompra(): void {
+    this.router.navigate(['/compra-finalizada']);
+  }
 
   onAtualizarValorTotal(): void {
     this.valorTotal = this.carrinho.reduce((total, item) => {

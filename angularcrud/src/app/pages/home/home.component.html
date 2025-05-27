@@ -1,6 +1,40 @@
 <div class="content-container">
   <app-menu [numeroDeItensNoCarrinho]="numeroDeItensNoCarrinho"></app-menu>
 
+  <section id="login" class="hidden">
+    <div class="container">
+      <div class="login-box">
+        <div class="logo-container">
+          <img src="images/imagem-PI-resized.png" alt="Logo" />
+        </div>
+
+        <h2>Entrar na sua conta</h2>
+
+        <form action="#" method="post">
+          <div class="input-container">
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Digite seu Usuário" required />
+          </div>
+
+          <div class="input-container">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="********" required />
+          </div>
+
+          <button type="button" onclick="verificarLogin()">Entrar</button>
+        </form>
+
+        <div class="forgot-password">
+          <a href="#">Esqueci minha senha</a>
+        </div>
+
+        <div class="register">
+          <p>Não tem uma conta? <a href="#">Cadastrar-se</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="home">
     <h2>Bem-vindo à nossa loja de artigos esportivos!</h2>
     <p>Aqui você encontra os melhores produtos para sua prática esportiva.</p>
@@ -55,46 +89,8 @@
     </form>
   </section>
 
-  <section id="carrinho" class="hidden">
-    <h2>Seu Carrinho</h2>
-    <div id="lista-carrinho"></div>
-    <p id="total">Total: R$ 0,00</p>
-    <button onclick="limparCarrinho()">Esvaziar Carrinho</button>
-  </section>
 
-  <section id="login" class="hidden">
-    <div class="container">
-      <div class="login-box">
-        <div class="logo-container">
-          <img src="images/imagem-PI-resized.png" alt="Logo" />
-        </div>
-
-        <h2>Entrar na sua conta</h2>
-
-        <form action="#" method="post">
-          <div class="input-container">
-            <label for="usuario">Usuário</label>
-            <input type="text" id="usuario" name="usuario" placeholder="Digite seu Usuário" required />
-          </div>
-
-          <div class="input-container">
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" placeholder="********" required />
-          </div>
-
-          <button type="button" onclick="verificarLogin()">Entrar</button>
-        </form>
-
-        <div class="forgot-password">
-          <a href="#">Esqueci minha senha</a>
-        </div>
-
-        <div class="register">
-          <p>Não tem uma conta? <a href="#">Cadastrar-se</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <footer>
     <p>&copy; 2025 SportShop - Todos os direitos reservados</p>

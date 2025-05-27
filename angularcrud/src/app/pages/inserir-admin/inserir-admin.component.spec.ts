@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HomeComponent } from './home.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+import { InserirAdminComponent } from './inserir-admin.component';
+
+describe('InserirAdminComponent', () => {
+  let component: InserirAdminComponent;
+  let fixture: ComponentFixture<InserirAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeComponent]
+      imports: [InserirAdminComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(InserirAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,4 +21,3 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-

@@ -5,6 +5,8 @@ import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { CalcadosMasculinoComponent } from './pages/calcados-masculino/calcados-masculino.component';
 import { AdminInsereComponent } from './pages/admin-insere/admin-insere.component';
 import { ProdutoFormComponent } from './pages/produto-form/produto-form.component';
+import { CompraFinalizadaComponent } from './compra-finalizada/compra-finalizada.component';
+import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
 
 export const routes: Routes = [
     {
@@ -37,4 +39,29 @@ export const routes: Routes = [
         component: ProdutoFormComponent,
         title: 'Produtos',
     },
+
+    {
+        path: 'compra-finalizada',
+        component: CompraFinalizadaComponent,
+        title: 'Compra Finalizada',
+    },
+
+    {
+        path: 'login-admin',
+        component: LoginAdminComponent,
+        title: 'Acesso ao admin',
+    },
+    
+    {
+        path: 'admin-insere',
+        component: AdminInsereComponent,
+        title: 'Incluir Produtos',
+    },
+
+
+    
+
+
+
+
 ];
