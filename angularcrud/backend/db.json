@@ -15,24 +15,17 @@
   ],
   "produtos": [
     {
-      "id": "1",
-      "nome": "Tênis de Treino Masculino",
-      "preco": 299.99,
-      "imagem": "assets/images/Air_Max_270.webp"
-    },
-    {
       "id": "2",
       "nome": "Tênis Nike Masculino",
       "preco": 499.99,
       "imagem": "assets/images/Air_Max_270.webp"
     },
     {
-      "id": "3",
-      "nome": "Tênis Adidas Masculino",
-      "preco": 399.99,
+      "id": "4",
+      "nome": "Tênis Puma Masculino",
+      "preco": 349.99,
       "imagem": "assets/images/Air_Max_270.webp"
-    },
-    {
+    },{
       "id": "4",
       "nome": "Tênis Puma Masculino",
       "preco": 349.99,
@@ -41,17 +34,32 @@
   ],
   "carrinho": [
     {
-      "id": "5a9d",
+      "id": "42ed",
+      "id_user": null,
+      "id_produto": "1"
+    },
+    {
+      "id": "364e",
       "id_user": 1,
       "id_produto": "1"
     },
     {
-      "id": "6dff",
+      "id": "51c4",
+      "id_user": 1,
+      "id_produto": "1"
+    },
+    {
+      "id": "d93e",
+      "id_user": 1,
+      "id_produto": "1"
+    },
+    {
+      "id": "18b3",
       "id_user": 1,
       "id_produto": "2"
     },
     {
-      "id": "8d96",
+      "id": "7dbc",
       "id_user": 1,
       "id_produto": "2"
     }

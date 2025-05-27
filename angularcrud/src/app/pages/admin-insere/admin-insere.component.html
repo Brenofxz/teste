@@ -3,15 +3,15 @@
 
   <!-- Formulário para adicionar/editar produto -->
   <form (ngSubmit)="salvarProduto()" ngIf="mostrarFormulario" class="mb-3">
-    <input type="text" [(ngModel)]="produtoAtual.nome" name="nome" placeholder="Nome do Produto" required class="form-control mb-2" />
-    <input type="number" [(ngModel)]="produtoAtual.preco" name="preco" placeholder="Preço" required class="form-control mb-2" />
-    <input type="number" [(ngModel)]="produtoAtual.quantidade" name="quantidade" placeholder="Quantidade" required class="form-control mb-2" />
+    <input type="text" name="nome" placeholder="Nome do Produto" required class="form-control mb-2" />
+    <input type="number" name="preco" placeholder="Preço" required class="form-control mb-2" />
+    <input type="number" name="quantidade" placeholder="Quantidade" required class="form-control mb-2" />
     <button type="submit" class="btn btn-primary">{{ editando ? 'Atualizar' : 'Adicionar' }}</button>
-    <button type="button" (click)="cancelar()" class="btn btn-secondary ms-2">Cancelar</button>
+    <button type="button" class="btn btn-secondary ms-2">Cancelar</button>
   </form>
 
   <!-- Botão para mostrar o formulário de adicionar -->
-  <buttonngIf="!mostrarFormulario" (click)="novoProduto()" class="btn btn-success mb-3">Incluir Produto</button>
+  <button *ngIf="!mostrarFormulario" class="btn btn-success mb-3">Incluir Produto</button>
 
   <!-- Tabela de produtos -->
   <table class="table table-striped">
@@ -25,16 +25,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let produto of produtos; let i = index">
-        <td>{{ i + 1 }}</td>
+      @for (produto of produtos; track $index) {
+      <tr>
+        <td>{{ $index + 1 }}</td>
         <td>{{ produto.nome }}</td>
-        <td>R$ {{ produto.preco | number:'1.2-2' }}</td>
-        <td>{{ produto.quantidade }}</td>
+        <td>R$ {{ produto.preco }}</td>
+        <td>{{ produto.imagem }}</td>
         <td>
-          <button class="btn btn-warning btn-sm" (click)="editar(i)">Editar</button>
-          <button class="btn btn-danger btn-sm" (click)="excluir(i)">Excluir</button>
+          <button class="btn btn-warning btn-sm" (click)="editar($index)">Editar</button>
+          <button class="btn btn-danger btn-sm" (click)="excluir($index)">Excluir</button>
         </td>
       </tr>
+      }
+
     </tbody>
   </table>
 </div>

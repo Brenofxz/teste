@@ -1,29 +1,35 @@
 import { Component } from '@angular/core';
-
-interface Produto {
-  nome: string;
-  preco: number;
-  quantidade: number;
-}
+import { ProdutoService } from '../../core/services/produto.service';
+import { Produto } from '../../core/services/types/types';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-produto-listagem',
-  templateUrl: './produto-listagem.component.html',
-  styleUrls: ['./produto-listagem.component.css']
+  templateUrl: './admin-insere.component.html',
+  standalone: true,
+  imports:[ ],
+  styleUrls: ['./admin-insere.component.css']
 })
-export class ProdutoListagemComponent {
-  produtos: Produto[] = [
-    { nome: 'Teclado Gamer', preco: 199.99, quantidade: 10 },
-    { nome: 'Mouse Sem Fio', preco: 89.50, quantidade: 25 }
-  ];
 
-  produtoAtual: Produto = { nome: '', preco: 0, quantidade: 0 };
+export class AdminInsereComponent {
+
+
+  produtos: Produto[] = []
+  constructor(private produtoService: ProdutoService) { }
+
+  produtoAtual: Produto = { id: 0, nome: '', preco: 0, imagem: '' };
   editando = false;
   indexEditando = -1;
   mostrarFormulario = false;
 
+  ngOnInit() {
+    this.produtoService.listar().subscribe((produto) => {
+      this.produtos = produto;
+    })
+  }
+
   novoProduto() {
-    this.produtoAtual = { nome: '', preco: 0, quantidade: 0 };
+    this.produtoAtual = { id: 0, nome: '', preco: 0, imagem: '' };
     this.editando = false;
     this.mostrarFormulario = true;
   }
@@ -45,14 +51,18 @@ export class ProdutoListagemComponent {
   }
 
   excluir(index: number) {
-    this.produtos.splice(index, 1);
-    if (this.editando && this.indexEditando === index) {
-      this.cancelar();
-    }
+    this.produtoService.deletar(index).subscribe(() => {
+      this.produtoService.listar().subscribe((produto) => {
+        this.produtos = produto;
+      })
+    })
+
+
+
   }
 
   cancelar() {
-    this.produtoAtual = { nome: '', preco: 0, quantidade: 0 };
+    this.produtoAtual = { id: 0, nome: '', preco: 0, imagem: '' };
     this.editando = false;
     this.indexEditando = -1;
     this.mostrarFormulario = false;

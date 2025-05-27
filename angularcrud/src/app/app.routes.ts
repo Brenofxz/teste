@@ -3,10 +3,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { CalcadosMasculinoComponent } from './pages/calcados-masculino/calcados-masculino.component';
-import { AdminInsereComponent } from './pages/admin-insere/admin-insere.component';
+
 import { ProdutoFormComponent } from './pages/produto-form/produto-form.component';
 import { CompraFinalizadaComponent } from './compra-finalizada/compra-finalizada.component';
 import { LoginAdminComponent } from './pages/login-admin/login-admin.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminInsereComponent } from './pages/admin-insere/admin-insere.component';
 
 export const routes: Routes = [
     {
@@ -51,15 +53,6 @@ export const routes: Routes = [
         component: LoginAdminComponent,
         title: 'Acesso ao admin',
     },
-    
-    {
-        path: 'admin-insere',
-        component: AdminInsereComponent,
-        title: 'Incluir Produtos',
-    },
-
-
-    
 
 
 
